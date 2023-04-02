@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct project_superheroesMarvelApp: App {
+    /// definición de la enviroment object a inyectar
+    @StateObject var rootView = ViewModelHeroe()
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup{
+            
+           // HeroeListView(viewModel: ViewModelHeroe()).environmentObject(listViewHeroe)
+            RootView().environmentObject(rootView)
         }
     }
 }
